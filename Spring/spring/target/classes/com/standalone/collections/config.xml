@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/util
+    http://www.springframework.org/schema/util/spring-util.xsd">
+    
+    <!-- standalone List Collection -->
+    <util:list list-class="java.util.ArrayList" id="myfriend">
+    <value>Amit Verma </value>
+    <value>Anshul Chourasia </value>
+    <value>Ashutosh Pathak</value>
+    <value>Ayush Khaskalam </value>
+    </util:list>
+    
+    <util:properties id="db">
+    <prop key="driver">com.yash.amay</prop>
+    <prop key="username">amay mandloi</prop>
+    <prop key="password">qwe</prop>
+    <prop key="url">kuch nhi</prop>
+    </util:properties>
+    
+    
+    <bean class="com.standalone.collections.Person" name="person">
+    <property name="friends" ref="myfriend"/>
+    <property name="props" ref="db"/>
+    </bean>
+ </beans>
